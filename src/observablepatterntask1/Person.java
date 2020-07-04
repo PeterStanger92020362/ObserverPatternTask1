@@ -8,6 +8,10 @@ public class Person implements Observer{
     // set a backing field
     private String personName;
 
+    public String getPersonName() {
+        return personName;
+    }
+
     // ctor
     public Person(String newName) {
         personName = newName;
@@ -15,6 +19,6 @@ public class Person implements Observer{
 
     // mandatory method because implements Observer
     public void update(Observable mySubject, Object prodName) {
-        System.out.println("Hello "+ personName +", the " + (String) prodName + " is now in stock.");
+        System.out.println("Hello "+ getPersonName() +", the " + (String) prodName + " is now in stock.");
     }
 }

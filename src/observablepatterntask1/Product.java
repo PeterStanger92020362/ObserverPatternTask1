@@ -11,6 +11,14 @@ public class Product extends Observable{
     private String productName;
     private int qtyInStock;
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getQtyInStock() {
+        return qtyInStock;
+    }
+
     // ctor
     public Product(String prodName) {
         super();
@@ -23,10 +31,10 @@ public class Product extends Observable{
     public void setQty(int newQty) {
         qtyInStock = newQty;
 
-        if(qtyInStock > 0)
+        if(getQtyInStock() > 0)
         {
             setChanged();
-            notifyObservers(this, productName);
+            notifyObservers(this, getProductName());
         }
     }
 
